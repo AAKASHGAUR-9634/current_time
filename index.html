@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+
+</head>
+
+<body>
+
+<div class="d-flex justify-content-center">
+  <div class="w-50 h-100 p-5 text-white bg-dark rounded-3 my-5">
+    <h2>current time is : <span id="demo"></span> </h2>
+    <p>you can see the date and time simply click by below button </p>
+    <button class="btn btn-outline-light" type="button" onclick="myfunction()">show and hide the time</button>
+
+  </div>
+</div>
+  <script>
+    function myfunction() {
+
+      let x = document.getElementById('demo');
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      }
+      else {
+        x.style.display = "none";
+      }
+
+      setInterval(myfun, 1000);
+      function myfun() {
+        a = new Date();
+        let time = a.toLocaleTimeString();
+        let date = a.toLocaleDateString();
+        let day = a.getDay();
+        let week = ["sunday", "monday", "tuesday", "wenesday", "thursday", "friday", "satarday"];
+        document.getElementById('demo').innerHTML = time + "<br> on " + date + " day is : " + week[day];
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
